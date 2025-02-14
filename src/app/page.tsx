@@ -20,22 +20,20 @@ export default function Page() {
 
   const getNoButtonText = () => {
     const phrases = [
-      "No",
-      "Are you sure?",
-      "Really sure?",
-      "Think again!",
-      "Last chance!",
-      "Surely not?",
-      "You might regret this!",
-      "Give it another thought!",
-      "Are you absolutely certain?",
-      "This could be a mistake!",
-      "Have a heart!",
-      "Don't be so cold!",
-      "Change of heart?",
-      "Wouldn't you reconsider?",
-      "Is that your final answer?",
-      "You're breaking my heart 💔",
+      "Итгэлтэй байна уу?",
+      "Үнэхээр итгэлтэй байна уу?",
+      "Дахиад нэг бодчих л доо",
+      "Тийм гэж хэлэх сүүлийн боломж!",
+      "Нээрэнгээсээ үгүй гэж үү?",
+      "Дараа нь харамсаад байв аа!",
+      "Дахиад нэг бодоод үз л дээ",
+      "Тийм итгэлтэй байна уу?",
+      "Энэрэнгүй байлдаа!",
+      "Битгийлдээ",
+      "Зүрхээ сонсооч!",
+      "Дахин нэг бодооч!",
+      "Нээрээ юу?",
+      "Чи намайг гомдоож байна шүү 💔😭",
     ];
     return phrases[Math.min(noCount, phrases.length - 1)];
   };
@@ -45,7 +43,7 @@ export default function Page() {
       {yesPressed ? (
         <>
           <img className="max-w-full h-auto" src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Celebration" />
-          <div className="text-4xl font-bold my-4">Ok Yayyy!!! 💖</div>
+          <div className="text-4xl font-bold my-4">Баярлалаа хайрт минь💖</div>
         </>
       ) : (
         <>
@@ -54,21 +52,19 @@ export default function Page() {
             src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
             alt="Valentine"
           />
-          <h1 className="text-4xl my-4 text-center">Will you be my Valentine? 🥰</h1>
-          {/* Both buttons are inside a flex container that centers them */}
+          <h1 className="text-4xl my-4 text-center">Миний валентине болох уу? Хайрт минь 🥰</h1>
           <div className="flex justify-center items-center space-x-4">
             <button
               ref={yesButtonRef}
               className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-2xl"
               onClick={() => setYesPressed(true)}
             >
-              Yes
+              Тийм
             </button>
             <button
               onClick={handleNoClick}
               className="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-8 rounded transition-all duration-300 text-2xl"
               style={
-                // Initially, when noCount is 0, do not override the button’s position
                 noCount > 0
                   ? {
                       position: "fixed",
@@ -79,7 +75,7 @@ export default function Page() {
                   : {}
               }
             >
-              {noCount === 0 ? "No" : getNoButtonText()}
+              {noCount === 0 ? "Үгүй" : getNoButtonText()}
             </button>
           </div>
         </>
